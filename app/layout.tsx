@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto_Flex } from "next/font/google";
+import { ViewTransition } from "react";
+import { Noto_Sans, DM_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const robotoFlex = Roboto_Flex({
-  variable: "--font-roboto-flex",
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
   subsets: ["latin"],
 });
 
@@ -72,10 +69,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${robotoFlex.variable} font-sans antialiased`}
+        className={`${notoSans.variable} ${dmMono.variable} font-sans antialiased`}
       >
         <ThemeProvider>
-          {children}
+          <ViewTransition>
+            {children}
+          </ViewTransition>
         </ThemeProvider>
       </body>
     </html>

@@ -21,7 +21,7 @@ export function ProjectList({ projects, className }: ProjectListProps) {
   return (
     <div
       ref={containerRef}
-      className={cn("w-full px-8 md:px-16 pt-8 pb-4", className)}
+      className={cn("w-full px-8 md:px-16 py-20", className)}
     >
       {/* Section Header */}
       <div className="scroll-reveal mb-6">

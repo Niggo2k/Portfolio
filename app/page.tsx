@@ -1,11 +1,11 @@
 "use client"
 
 import * as React from "react"
+import { useRouter } from "next/navigation"
 import { Hero } from "@/components/portfolio/hero"
 import { TabNav } from "@/components/portfolio/tab-nav"
 import { ProjectGrid } from "@/components/portfolio/project-grid"
 import { ProjectList } from "@/components/portfolio/project-list"
-import { AboutContent } from "@/components/portfolio/about-content"
 import { Footer } from "@/components/portfolio/footer"
 import {
   profile,
@@ -16,28 +16,21 @@ import {
 
 const tabs = [
   { id: "work", label: "Work" },
-  { id: "about", label: "About" },
-]
-
-const skills = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "Laravel",
-  "Vue.js",
-  "Node.js",
-  "PostgreSQL",
-  "MySQL",
-  "Stripe",
-  "Supabase",
-  "Docker",
+  { id: "about", label: "About", href: "/about" },
 ]
 
 export default function Page() {
   const [activeTab, setActiveTab] = React.useState("work")
+  const [isPending, startTransition] = React.useTransition()
+  const router = useRouter()
 
   const handleNavClick = (id: string) => {
+    if (id === "about") {
+      startTransition(() => {
+        router.push("/about")
+      })
+      return
+    }
     setActiveTab(id)
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
@@ -58,15 +51,8 @@ export default function Page() {
       />
 
       <section className="pb-8 w-full">
-        {activeTab === "work" && (
-          <>
-            <ProjectGrid projects={projects.slice(0, 4)} />
-            <ProjectList projects={projects.slice(4)} />
-          </>
-        )}
-        {activeTab === "about" && (
-          <AboutContent bio={profile.bio} skills={skills} />
-        )}
+        <ProjectGrid projects={projects.slice(0, 4)} />
+        <ProjectList projects={projects.slice(4)} />
       </section>
 
       <Footer

@@ -43,7 +43,7 @@ export function ProjectListItem({ project, className, index = 0 }: ProjectListIt
           </span>
 
           {/* Tags - hidden on mobile */}
-          <div className="hidden md:flex items-center gap-2 flex-wrap">
+          <div className="hidden md:flex items-center gap-2 flex-wrap flex-1 justify-end">
             {tags.map((tag) => (
               <span
                 key={tag}

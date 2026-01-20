@@ -35,6 +35,14 @@ export interface ProfileData {
 		subtitle: string;
 		location: string;
 		bio: string;
+		extendedBio: string;
+	}
+
+export interface Education {
+		institution: string;
+		degree: string;
+		period: string;
+		location?: string;
 	}
 
 export const profile: ProfileData = {
@@ -44,7 +52,21 @@ export const profile: ProfileData = {
 	subtitle: "Full-Stack Developer & Co-Founder",
 	location: "Göppingen, Germany",
 	bio: "I'm a full-stack developer passionate about building products that solve real problems. With experience across e-commerce platforms, data visualization tools, and IoT solutions, I focus on creating intuitive user experiences backed by solid engineering.",
+	extendedBio: `I'm a full-stack developer based in Germany with a passion for building products that matter. I love taking ideas from concept to production—whether that's a cashback platform serving hundreds of users or a side project that scratches my own itch.
+
+My journey started with curiosity about how things work, which led me to study computer science and eventually co-found Paroot Cashback. Building a startup taught me more than any course ever could: from handling payment integrations to designing systems that scale.
+
+I'm particularly interested in developer tools, e-commerce, and anything that makes people's lives a bit easier. When I'm not shipping features, you'll find me exploring new technologies, contributing to open source, or dreaming up the next side project.`,
 };
+
+export const education: Education[] = [
+	{
+		institution: "Esslingen University of Applied Sciences",
+		degree: "Bachelor of Engineering",
+		period: "Oct. 2021 - Aug. 2025",
+		location: "Esslingen, Germany",
+	},
+];
 
 export const previousCompanies: Company[] = [
 	{
@@ -77,10 +99,11 @@ export const projects: Project[] = [
 		status: "live",
 		image: "/projects/indiewrapped/indiewrapped.jpg",
 		images: [
-			"/projects/indiewrapped/indiewrapped.jpg",
-			"/projects/indiewrapped/CleanShot 2026-01-11 at 14.23.53.jpg",
-			"/projects/indiewrapped/CleanShot 2026-01-11 at 14.24.05.jpg",
-			"/projects/indiewrapped/CleanShot 2026-01-11 at 14.24.14.jpg",
+			"/projects/indiewrapped/indiewrapped-1.jpg",
+			"/projects/indiewrapped/indiewrapped-2.jpg",
+			"/projects/indiewrapped/indiewrapped-3.jpg",
+			"/projects/indiewrapped/indiewrapped-4.jpg",
+			"/projects/indiewrapped/indiewrapped-5.jpg",
 		],
 		tags: ["Next.js", "Grok AI", "Tailwind CSS"],
 		year: "2025",
@@ -91,7 +114,7 @@ export const projects: Project[] = [
 		company: "FastDomain",
 		description:
 			"Real-time domain price comparison across multiple registrars. Find the best deals for your domain names.",
-		url: "https://github.com/Niggo2k/Fastdomain2",
+		url: "https://fastdomain.io",
 		status: "wip",
 		image: "/projects/fastdomain/fastdomain-1.jpg",
 		images: [
@@ -128,7 +151,7 @@ export const projects: Project[] = [
 		company: "Paroot",
 		description:
 			"Full-stack cashback platform connecting consumers with 270+ partner retailers. Processed hundreds of transactions with automated reward systems.",
-		url: "https://paroot.de",
+		url: "",
 		status: "live",
 		image: "/projects/paroot/paroot-1.jpg",
 		images: [
@@ -138,6 +161,17 @@ export const projects: Project[] = [
 		],
 		tags: ["Laravel", "Vue.js", "MySQL", "Stripe"],
 		year: "2022 - 2025",
+	},
+	{
+		id: "adapt2move-mobile",
+		title: "Adapt2Move Mobility Application",
+		description:
+			"Mobile application for the Adapt2Move project. It allows users to track their mobility and receive notifications about their activities.",
+		url: "https://github.com/adapt2move/mobilityapp",
+		status: "student-project",
+		image: "",
+		tags: ["Vue.js", "TypeScript", "Tailwind CSS", "Ionic"],
+		year: "2025",
 	},
 	{
 		id: "mobile-applications",
