@@ -21,8 +21,8 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
     return (
       <button
         className={cn(
-          "flex size-10 items-center justify-center rounded-2xl",
-          "bg-white/5 ring-1 ring-white/10",
+          "flex size-9 items-center justify-center rounded-full",
+          "bg-muted text-muted-foreground",
           className
         )}
       >
@@ -34,17 +34,17 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
   return (
     <button
       className={cn(
-        "flex size-10 items-center justify-center rounded-2xl",
-        "bg-white/5 ring-1 ring-white/10",
-        "transition-all duration-300",
-        "hover:bg-white/10 hover:ring-white/20",
+        "flex size-9 items-center justify-center rounded-full",
+        "bg-muted text-muted-foreground",
+        "transition-colors duration-200",
+        "hover:bg-accent hover:text-accent-foreground",
         className
       )}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       <SunIcon
         className={cn(
-          "absolute size-5 text-white/60 transition-all duration-500",
+          "absolute size-4 transition-all duration-300",
           theme === "dark"
             ? "rotate-0 scale-100 opacity-100"
             : "rotate-90 scale-0 opacity-0"
@@ -53,7 +53,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       />
       <MoonIcon
         className={cn(
-          "absolute size-5 text-white/60 transition-all duration-500",
+          "absolute size-4 transition-all duration-300",
           theme === "dark"
             ? "-rotate-90 scale-0 opacity-0"
             : "rotate-0 scale-100 opacity-100"
