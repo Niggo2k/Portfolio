@@ -4,7 +4,7 @@ import * as React from "react"
 import { useRef } from "react"
 import { cn } from "@/lib/utils"
 import type { Company } from "@/lib/portfolio-data"
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import VariableProximity from "@/components/ui/variable-proximity"
 import { MagneticLogo } from "@/components/ui/magnetic-logo"
 import {

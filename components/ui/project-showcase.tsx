@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight } from "@phosphor-icons/react"
 
 interface Project {
   title: string

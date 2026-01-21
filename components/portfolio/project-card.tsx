@@ -1,11 +1,14 @@
 "use client"
 
 import * as React from "react"
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, memo } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { motion, AnimatePresence } from "motion/react"
+import { motion, AnimatePresence } from "framer-motion"
 import type { Project } from "@/lib/portfolio-data"
+
+// Base64 shimmer placeholder for blur-up effect
+const shimmerPlaceholder = `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCBmaWxsPSIjZjZmN2Y4IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIi8+PC9zdmc+`
 
 interface ProjectCardProps {
   project: Project
@@ -13,7 +16,7 @@ interface ProjectCardProps {
   index?: number
 }
 
-export function ProjectCard({ project, className, index = 0 }: ProjectCardProps) {
+export const ProjectCard = memo(function ProjectCard({ project, className, index = 0 }: ProjectCardProps) {
   const hasDetailedInfo = project.company && project.year
   const [isHovered, setIsHovered] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -79,15 +82,23 @@ export function ProjectCard({ project, className, index = 0 }: ProjectCardProps)
                 className="absolute inset-0"
               >
                 {allImages[currentImageIndex].includes(".mp4") ? (
-                  <video src={allImages[currentImageIndex]} autoPlay muted loop className="object-cover rounded-[26px] size-full" />
+                  <video
+                    src={allImages[currentImageIndex]}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                    className="object-cover rounded-[26px] size-full"
+                  />
                 ) : (
                 <Image
                   src={allImages[currentImageIndex]}
                   alt={`${project.title} - Image ${currentImageIndex + 1}`}
                   fill
-                      quality={100}
-                      placeholder="blur"
-                      blurDataURL={allImages[currentImageIndex]}
+                  quality={100}
+                  placeholder="blur"
+                  blurDataURL={shimmerPlaceholder}
                   className="object-cover rounded-[26px] size-full"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority={index < 2}
@@ -150,4 +161,4 @@ export function ProjectCard({ project, className, index = 0 }: ProjectCardProps)
       </a>
     </motion.div>
   )
-}
+})

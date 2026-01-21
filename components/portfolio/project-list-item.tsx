@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { memo } from "react"
 import { cn } from "@/lib/utils"
 import type { Project } from "@/lib/portfolio-data"
 import { IconGithub, IconArrowUpRight } from "@central-icons-react/round-outlined-radius-3-stroke-2"
@@ -11,7 +12,7 @@ interface ProjectListItemProps {
   index?: number
 }
 
-export function ProjectListItem({ project, className, index = 0 }: ProjectListItemProps) {
+export const ProjectListItem = memo(function ProjectListItem({ project, className, index = 0 }: ProjectListItemProps) {
   const isGitHub = project.url.includes("github.com")
   const Icon = isGitHub ? IconGithub : IconArrowUpRight
   const tags = project.tags?.slice(0, 4) || []
@@ -63,4 +64,4 @@ export function ProjectListItem({ project, className, index = 0 }: ProjectListIt
       </a>
     </div>
   )
-}
+})

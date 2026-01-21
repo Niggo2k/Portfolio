@@ -1,5 +1,3 @@
-"use client"
-
 import { cn } from "@/lib/utils"
 import { IconPush, IconGamepad, IconSuitcaseSticker, IconAudio, IconSoccer, IconDumbell } from "@central-icons-react/round-filled-radius-3-stroke-2"
 
@@ -12,17 +10,17 @@ interface InterestsSectionProps {
   className?: string
 }
 
-export function InterestsSection({ className }: InterestsSectionProps) {
-  // Interests data
-  const interestsData: Interest[] = [
-    { icon: IconPush, label: "Building side projects" },
-    { icon: IconGamepad, label: "Gaming" },
-    { icon: IconSuitcaseSticker, label: "Travel" },
-    { icon: IconAudio, label: "Music" },
-    { icon: IconDumbell, label: "Fitness" },
-    { icon: IconSoccer, label: "Soccer" },
-  ]
+// Static interests data
+const interestsData: Interest[] = [
+  { icon: IconPush, label: "Building side projects" },
+  { icon: IconGamepad, label: "Gaming" },
+  { icon: IconSuitcaseSticker, label: "Travel" },
+  { icon: IconAudio, label: "Music" },
+  { icon: IconDumbell, label: "Fitness" },
+  { icon: IconSoccer, label: "Soccer" },
+]
 
+export function InterestsSection({ className }: InterestsSectionProps) {
   return (
     <section
       className={cn(

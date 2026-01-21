@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 86400 // 24 hours
 
 export async function GET() {
   const width = 414
@@ -48,6 +48,9 @@ export async function GET() {
     {
       width,
       height,
+      headers: {
+        'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800',
+      },
     }
   )
 }

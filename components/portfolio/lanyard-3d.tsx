@@ -12,14 +12,6 @@ const ASSETS = {
   model: '/models/tag.glb',
   band: '/api/lanyard-texture'
 }
-useGLTF.preload(ASSETS.model)
-useTexture.preload(ASSETS.band)
-
-// Preload badge textures for both themes
-useTexture.preload('/api/badge-texture?theme=dark')
-useTexture.preload('/api/badge-texture?theme=light')
-useTexture.preload('/api/lanyard-texture')
-useTexture.preload('/images/bg-pattern-inv.webp')
 
 interface Lanyard3DProps {
   className?: string

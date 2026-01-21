@@ -5,14 +5,18 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const dmMono = DM_Mono({
-  variable: "--font-dm-mono",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500"],
+  display: 'swap',
+  preload: true,
+  variable: "--font-dm-mono",
 });
 
 const notoSans = Noto_Sans({
-  variable: "--font-noto-sans",
   subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  variable: "--font-noto-sans",
 });
 
 export const metadata: Metadata = {

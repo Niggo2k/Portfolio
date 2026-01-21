@@ -5,7 +5,7 @@ import { readFile, writeFile } from 'fs/promises'
 import { join } from 'path'
 import { tmpdir } from 'os'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 3600 // 1 hour
 
 // Types for GitHub contribution data
 interface ContributionDay {

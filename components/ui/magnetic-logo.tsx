@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { motion, useMotionValue, useSpring } from "motion/react";
+import React, { useState, useEffect, useRef, memo } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 
 const SPRING_CONFIG = { damping: 100, stiffness: 400 };
@@ -15,7 +15,7 @@ interface MagneticLogoProps {
   className?: string;
 }
 
-export function MagneticLogo({
+export const MagneticLogo = memo(function MagneticLogo({
   image,
   gradient,
   rotation = 12,
@@ -126,4 +126,4 @@ export function MagneticLogo({
       </motion.div>
     </motion.div>
   );
-}
+})

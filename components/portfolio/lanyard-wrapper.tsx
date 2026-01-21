@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Suspense, useState, useEffect } from 'react'
+import { Suspense, useState, useEffect, useRef } from 'react'
 import { cn } from '@/lib/utils'
 import dynamic from 'next/dynamic'
 
@@ -57,12 +57,32 @@ interface LanyardWrapperProps {
 export function LanyardWrapper({ className, eventSource }: LanyardWrapperProps) {
   const [shouldRender3D, setShouldRender3D] = useState(false)
   const [isClient, setIsClient] = useState(false)
+  const [isInViewport, setIsInViewport] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     setIsClient(true)
     const canRender3D = isWebGLSupported() && !prefersReducedMotion()
     setShouldRender3D(canRender3D)
   }, [])
+
+  // Viewport-triggered loading with IntersectionObserver
+  useEffect(() => {
+    if (!isClient || !shouldRender3D || !containerRef.current) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInViewport(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '100px', threshold: 0 }
+    )
+
+    observer.observe(containerRef.current)
+    return () => observer.disconnect()
+  }, [isClient, shouldRender3D])
 
   // Server-side or during hydration: show skeleton
   if (!isClient) {
@@ -72,6 +92,15 @@ export function LanyardWrapper({ className, eventSource }: LanyardWrapperProps) 
   // Show fallback if 3D is not supported
   if (!shouldRender3D) {
     return <LanyardFallback className={className} />
+  }
+
+  // Show skeleton until in viewport
+  if (!isInViewport) {
+    return (
+      <div ref={containerRef} className={className}>
+        <LanyardSkeleton className="h-full" />
+      </div>
+    )
   }
 
   // Render 3D with lazy loading
