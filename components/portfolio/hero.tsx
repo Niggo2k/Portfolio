@@ -19,6 +19,7 @@ interface HeroProps {
   name: string
   tagline: string
   previousCompanies?: Company[]
+  showContactButton?: boolean
   className?: string
 }
 
@@ -26,6 +27,7 @@ export function Hero({
   name,
   tagline,
   previousCompanies,
+  showContactButton = false,
   className,
 }: HeroProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -83,14 +85,14 @@ export function Hero({
               <VariableProximity
                 label={name}
                 containerRef={containerRef}
-                className="tracking-[0.0125em] leading-normal relative shrink-0 text-[#1f2937] dark:text-[#f3f4f6] text-4xl w-full max-md:text-4xl"
+                className="tracking-[0.0125em] leading-normal relative shrink-0 text-foreground text-4xl w-full max-md:text-4xl"
                 style={{ fontFamily: 'var(--font-roboto-flex), sans-serif' }}
                 fromFontVariationSettings="'wght' 400, 'wdth' 100"
                 toFontVariationSettings="'wght' 900, 'wdth' 125"
                 radius={60}
                 falloff="gaussian"
               />
-              <div className="flex flex-col gap-0 font-normal tracking-wide leading-6 max-md:leading-5.5 text-[#6b7280] dark:text-[#9ca3af] text-lg max-md:text-base w-full max-md:max-w-86 whitespace-pre-wrap mt-3 max-md:mt-3">
+              <div className="flex flex-col gap-0 font-normal tracking-wide leading-6 max-md:leading-5.5 text-muted-foreground text-lg max-md:text-base w-full max-md:max-w-86 whitespace-pre-wrap mt-3 max-md:mt-3">
                 <div>
                   <span>{tagline}</span>
                   <span className="gradient-text-animated"> ✦</span>
@@ -117,12 +119,12 @@ export function Hero({
                                   href={company.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="text-[#1f2937] dark:text-[#e5e7eb] hover:text-[#6366f1] dark:hover:text-[#818cf8] transition-colors"
+                                  className="text-foreground hover:opacity-70 hover:underline underline-offset-2 transition-all"
                                 >
                                   {company.name}
                                 </a>
                               ) : (
-                                  <span className="text-[#1f2937] dark:text-[#e5e7eb]">{company.name}</span>
+                                  <span className="text-foreground">{company.name}</span>
                               )}
                             </span>} />
                             <HoverCardContent side="bottom" align="start" className="w-80 ring-0 outline-0 shadow-xl rounded-2xl p-4">
@@ -166,15 +168,6 @@ export function Hero({
                       <span>.</span>
                     </>
                   )}
-                  <span className="relative inline-flex items-center group justify-center rounded-[999px] transition-all ease-in-out w-fit bg-[#ecfdf5] dark:bg-emerald-950/50 align-middle -translate-y-[2px] [cursor:inherit] before:content-[''] before:absolute before:-inset-[2px] before:rounded-[999px] before:pointer-events-none md:gap-0 pl-1 pr-2.5 md:pr-0 ml-1 md:ml-2 duration-300">
-                    <span className="relative shrink-0 size-[16px] overflow-visible">
-                      <span className="green-pulse-ring"></span>
-                      <svg className="block size-full relative z-10" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16"><g id="Background"><rect fill="var(--fill-0, #A7F3D0)" height="16" rx="8" width="16"></rect><circle cx="8" cy="8" fill="var(--fill-0, #10B981)" id="Ellipse 1" r="4"></circle></g></svg>
-                    </span>
-                    <span className="font-normal text-emerald-600 text-sm md:text-base tracking-[0.005em] text-nowrap overflow-hidden transition-all ease-out duration-300 max-md:max-w-[200px] max-md:opacity-100 md:max-w-0 md:opacity-0 group-hover:max-w-full group-hover:opacity-100">
-                      <span className="ml-1.5">Let&apos;s build together! </span>
-                      <a href="mailto:hello@nico.dev" className="[text-decoration-skip-ink:none] [text-underline-position:from-font] font-semibold text-emerald-600 hover:!text-blue-500 transition-colors underline">Contact</a></span>
-                  </span>
                 </div>
               </div>
             </div>

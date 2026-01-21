@@ -87,10 +87,10 @@ async function writeCache(username: string, data: ContributionData): Promise<voi
 async function fetchContributions(username: string): Promise<ContributionData> {
   const token = process.env.GITHUB_TOKEN
 
-  // Calculate date range (last 6 months)
+  // Calculate date range (last 3 months)
   const to = new Date()
   const from = new Date()
-  from.setMonth(from.getMonth() - 6)
+  from.setMonth(from.getMonth() - 3)
 
   // Try to get cached data first
   const cached = await readCache(username)
@@ -228,7 +228,7 @@ export async function GET() {
   }, 0)
 
   // Cell styling for contribution graph
-  const cellSize = 8
+  const cellSize = 10
   const cellGap = 2
   const cellRadius = 2
   const baseColor = 'lab(35.6337% -1.58697 -10.8425)'
@@ -293,7 +293,7 @@ export async function GET() {
                 position: 'absolute',
                 top: 30,
                 right: 35,
-                fontSize: 24,
+                  fontSize: 32,
                 fontWeight: 700,
                 color: textColor,
                 opacity: 0.7,
@@ -351,7 +351,7 @@ export async function GET() {
                 <div
                   style={{
                     display: 'flex',
-                    fontSize: 36,
+                      fontSize: 48,
                     fontWeight: 700,
                     color: textColor,
                   }}
@@ -361,7 +361,7 @@ export async function GET() {
                 <div
                   style={{
                     display: 'flex',
-                    fontSize: 36,
+                      fontSize: 48,
                     fontWeight: 700,
                     color: textColor,
                   }}
@@ -371,7 +371,7 @@ export async function GET() {
                 <div
                   style={{
                     display: 'flex',
-                    fontSize: 18,
+                      fontSize: 24,
                     color: textColor,
                     marginTop: 8,
                     opacity: 0.8,
@@ -433,7 +433,7 @@ export async function GET() {
                 <div
                   style={{
                     display: 'flex',
-                    fontSize: 16,
+                      fontSize: 21,
                     fontWeight: 500,
                     color: textColor,
                     opacity: 0.7,
@@ -447,7 +447,13 @@ export async function GET() {
                   style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: cellGap,
+                      alignItems: 'flex-end',
+                      paddingLeft: 16,
+                      WebkitMaskImage: "linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 10%)",
+                      maskImage: "linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 10%)",
+                      overflow: 'hidden',
+                      gap: cellGap,
+                      width: '100%',
                   }}
                 >
                   {/* Render 7 rows (days of the week) */}

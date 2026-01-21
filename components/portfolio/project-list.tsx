@@ -25,12 +25,12 @@ export function ProjectList({ projects, className }: ProjectListProps) {
     >
       {/* Section Header */}
       <div className="scroll-reveal mb-6">
-        <p className="text-sm text-gray-400 font-medium mb-1">More Work</p>
-        <h2 className="text-2xl font-semibold text-gray-900">Other Projects</h2>
+        <p className="text-sm text-muted-foreground font-medium mb-1">More Work</p>
+        <h2 className="text-2xl font-semibold text-foreground">Other Projects</h2>
       </div>
 
       {/* Project List */}
-      <div className="divide-y divide-gray-100">
+      <div className="divide-y divide-border">
         {projects.map((project, index) => (
           <ProjectListItem
             key={project.id}

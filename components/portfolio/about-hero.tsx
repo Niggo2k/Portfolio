@@ -66,20 +66,20 @@ export function AboutHero({
           {/* Content */}
           <div className="flex flex-col gap-6 text-center md:text-left">
             {/* Greeting */}
-            <h2 className="font-medium text-3xl text-gray-600 dark:text-gray-200">
+            <h2 className="font-medium text-3xl text-foreground">
               Hey, I&apos;m {name.split(" ")[0]}!
             </h2>
 
             {/* Info Badges */}
             <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2">
-              <div className="flex items-center gap-2 text-gray-400 dark:text-gray-500">
-                <IconMapPin className="size-4" />
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <IconMapPin className="size-4 my-1" />
                 <span className="text-base tracking-[0.005em]">
                   {location}
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-gray-400 dark:text-gray-500">
-                <IconGraduateCap className="size-4" />
+              <div className="flex items-start md:items-center gap-2 text-muted-foreground">
+                <IconGraduateCap className="size-4 shrink-0 my-1" />
                 <span className="text-base tracking-[0.005em]">
                   {education.degree} / {education.institution}
                 </span>
@@ -87,24 +87,26 @@ export function AboutHero({
             </div>
 
             {/* Bio Paragraphs */}
-            <div className="flex flex-col gap-4 text-base tracking-[0.005em] leading-relaxed text-gray-600 dark:text-gray-300">
+            <div className="flex flex-col gap-4 text-base tracking-[0.005em] leading-relaxed text-muted-foreground">
               {bio}
             </div>
 
             {/* Tagline */}
             {tagline && (
-              <p className="text-base tracking-[0.005em] text-gray-600 dark:text-gray-300">
+              <p className="text-base tracking-[0.005em] text-muted-foreground">
                 3 words to describe me:{" "}
-                <em className="text-gray-700 dark:text-gray-200">{tagline}</em>
+                <em className="text-foreground">{tagline}</em>
               </p>
             )}
 
             {/* Availability Indicator */}
             <div className="flex justify-center md:justify-start">
               <span className="inline-flex items-center gap-2.5 bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 px-4 py-2 rounded-full text-sm">
-                <span className="relative flex size-2.5">
-                  <span className="green-pulse-ring"></span>
-                  <span className="relative inline-flex rounded-full size-2.5 bg-emerald-400"></span>
+                <span className="relative inline-flex items-center group justify-center rounded-[999px] transition-all ease-in-out w-fit bg-emerald-50 dark:bg-emerald-950/30 align-middle [cursor:inherit] before:content-[''] before:absolute before:-inset-[2px] before:rounded-[999px] before:pointer-events-none md:gap-0 duration-300">
+                  <span className="relative shrink-0 size-[16px] overflow-visible">
+                    <span className="green-pulse-ring"></span>
+                    <svg className="block size-full relative z-10" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16"><g id="Background"><rect fill="var(--fill-0, #A7F3D0)" height="16" rx="8" width="16"></rect><circle cx="8" cy="8" fill="var(--fill-0, #10B981)" id="Ellipse 1" r="4"></circle></g></svg>
+                  </span>
                 </span>
                 <span>
                   Working on something cool?{" "}
@@ -138,7 +140,7 @@ export function BioLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="font-semibold text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+      className="font-semibold text-foreground hover:text-primary transition-colors"
     >
       {children}
     </a>

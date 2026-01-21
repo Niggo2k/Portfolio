@@ -28,17 +28,17 @@ export function ProjectListItem({ project, className, index = 0 }: ProjectListIt
         className={cn(
           "group flex items-center gap-4 py-4 px-4 -mx-4 rounded-xl",
           "transition-colors duration-200",
-          "hover:bg-gray-50"
+          "hover:bg-muted/50"
         )}
       >
         {/* Year */}
-        <span className="text-sm text-gray-400 font-medium w-24 shrink-0 hidden sm:block">
+        <span className="text-sm text-muted-foreground font-medium w-24 shrink-0 hidden sm:block">
           {project.year || "—"}
         </span>
 
         {/* Title and Tags */}
         <div className="flex flex-1 items-center gap-3 min-w-0">
-          <span className="font-medium text-gray-900 shrink-0">
+          <span className="font-medium text-foreground shrink-0">
             {project.title}
           </span>
 
@@ -47,7 +47,7 @@ export function ProjectListItem({ project, className, index = 0 }: ProjectListIt
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2.5 py-0.5 text-xs font-medium text-gray-500 bg-gray-100 rounded-full"
+                className="px-2.5 py-0.5 text-xs font-medium text-muted-foreground bg-muted rounded-full"
               >
                 {tag}
               </span>
@@ -57,7 +57,7 @@ export function ProjectListItem({ project, className, index = 0 }: ProjectListIt
 
         {/* Link Icon */}
         <Icon
-          className="w-5 h-5 text-gray-400 shrink-0 transition-colors duration-200 group-hover:text-gray-600"
+          className="w-5 h-5 text-muted-foreground shrink-0 transition-colors duration-200 group-hover:text-foreground"
           size={20}
         />
       </a>

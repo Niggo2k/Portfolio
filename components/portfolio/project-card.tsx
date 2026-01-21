@@ -65,7 +65,7 @@ export function ProjectCard({ project, className, index = 0 }: ProjectCardProps)
         {/* Card Container */}
         <div className="content-stretch flex flex-col items-start justify-end overflow-clip relative rounded-[50px] [corner-shape:squircle] shrink-0 w-full transition-transform duration-300 group-hover:scale-[0.99]">
           {/* Image/Video Container */}
-          <div className="aspect-[678/367.625] relative rounded-[26px] shrink-0 w-full overflow-hidden bg-[#e5e7eb] dark:bg-[#1f2937]">
+          <div className="aspect-[678/367.625] relative rounded-[26px] shrink-0 w-full overflow-hidden bg-muted dark:bg-card">
             <AnimatePresence mode="popLayout">
               <motion.div
                 key={currentImageIndex}
@@ -97,16 +97,16 @@ export function ProjectCard({ project, className, index = 0 }: ProjectCardProps)
             </AnimatePresence>
 
             {/* Loading overlay */}
-            <div className="absolute inset-0 rounded-[26px] transition-opacity duration-500 ease-out bg-[#e5e7eb] dark:bg-[#1f2937] z-10 pointer-events-none opacity-0" />
+            <div className="absolute inset-0 rounded-[26px] transition-opacity duration-500 ease-out bg-muted dark:bg-card z-10 pointer-events-none opacity-0" />
           </div>
 
           {/* Badge - Desktop only */}
           {hasDetailedInfo && (
             <div className="absolute bottom-0 left-0 p-3 hidden md:block z-20">
-              <div className="bg-white dark:bg-[#1f2937] border border-[#f3f4f6] dark:border-[#374151] border-solid flex items-center justify-center px-3 pt-[5px] pb-[4.8px] rounded-full">
-                <p className="font-medium tracking-[0.005em] leading-[1.4] text-[#111827] dark:text-[#f3f4f6] text-base">
+              <div className="bg-background dark:bg-card border border-border border-solid flex items-center justify-center px-3 pt-[5px] pb-[4.8px] rounded-full">
+                <p className="font-medium tracking-[0.005em] leading-[1.4] text-foreground text-base">
                   <span>{project.company || project.title}</span>
-                  <span className="text-[#6b7280] dark:text-[#9ca3af] text-mono"> &bull; {project.year}</span>
+                  <span className="text-muted-foreground text-mono"> &bull; {project.year}</span>
                 </p>
               </div>
             </div>
@@ -121,8 +121,8 @@ export function ProjectCard({ project, className, index = 0 }: ProjectCardProps)
                   className={cn(
                     "w-1.5 h-1.5 rounded-full transition-all duration-300",
                     imgIndex === currentImageIndex
-                      ? "bg-white scale-110"
-                      : "bg-white/50"
+                      ? "bg-foreground scale-110"
+                      : "bg-foreground/50"
                   )}
                 />
               ))}
@@ -132,18 +132,18 @@ export function ProjectCard({ project, className, index = 0 }: ProjectCardProps)
 
         {/* Description - Desktop */}
         <div className="hidden md:flex content-stretch items-start px-[13px] py-0 -mt-1 relative shrink-0 w-full">
-          <p className="font-normal leading-none text-[#6b7280] dark:text-[#9ca3af] text-base tracking-[0.005em] text-left project-hover-text">
+          <p className="font-normal leading-none text-muted-foreground text-base tracking-[0.005em] text-left project-hover-text">
             {project.description}
           </p>
         </div>
 
         {/* Info - Mobile */}
         <div className="md:hidden content-stretch flex flex-col font-normal items-start leading-[1.4] px-[13px] py-0 relative shrink-0 text-base tracking-[0.01em] gap-1">
-          <p className="relative shrink-0 text-[#111827] dark:text-[#f3f4f6] text-left project-hover-text">
+          <p className="relative shrink-0 text-foreground text-left project-hover-text">
             <span>{project.company || project.title}</span>
-            {project.year && <span className="text-[#6b7280] dark:text-[#9ca3af] text-mono"> &bull; {project.year}</span>}
+            {project.year && <span className="text-muted-foreground text-mono"> &bull; {project.year}</span>}
           </p>
-          <p className="relative shrink-0 text-[#6b7280] dark:text-[#9ca3af] w-full text-left font-normal leading-[1.3]">
+          <p className="relative shrink-0 text-muted-foreground w-full text-left font-normal leading-[1.3]">
             {project.description}
           </p>
         </div>

@@ -43,7 +43,7 @@ export function Footer({
         <div className="content-stretch flex flex-col gap-16 items-center px-16 max-md:px-8 pt-8 pb-8 max-md:pb-16 max-md:pt-4 relative w-full">
           {/* Divider */}
           <div className="scroll-reveal content-stretch flex flex-col gap-5 items-start relative shrink-0 w-full revealed">
-            <div className="bg-gray-200 h-px shrink-0 w-full" />
+            <div className="bg-border h-px shrink-0 w-full" />
 
             {/* Desktop Footer */}
             <div className="hidden md:grid gap-5 grid-cols-[repeat(4,_minmax(0px,_1fr))] grid-rows-[repeat(1,_fit-content(100%))] relative shrink-0 w-full">
@@ -53,7 +53,7 @@ export function Footer({
                   href="/"
                   className="content-stretch flex gap-3 items-center justify-center relative shrink-0 hover:opacity-80 transition-opacity"
                 >
-                  <p className=" font-medium leading-normal relative shrink-0 text-[#374151] text-[32px]">
+                  <p className=" font-medium leading-normal relative shrink-0 text-foreground text-[32px]">
                     {name}
                   </p>
                 </Link>
@@ -68,7 +68,7 @@ export function Footer({
                       href={item.href}
                       className="content-stretch flex items-center justify-center px-0.5 py-0 relative rounded-full shrink-0"
                     >
-                      <p className=" leading-5 relative shrink-0 text-[#9ca3af] text-base text-nowrap tracking-[0.16px] hover:text-blue-500 transition-colors duration-200">
+                      <p className=" leading-5 relative shrink-0 text-muted-foreground text-base text-nowrap tracking-[0.16px] hover:text-foreground hover:underline underline-offset-2 transition-colors duration-200">
                         {item.label}
                       </p>
                     </Link>
@@ -78,7 +78,7 @@ export function Footer({
                       onClick={() => onTabChange?.(item.id)}
                       className="content-stretch flex items-center justify-center px-0.5 py-0 relative rounded-full shrink-0"
                     >
-                        <p className=" leading-5 relative shrink-0 text-[#9ca3af] text-base text-nowrap tracking-[0.16px] hover:text-blue-500 transition-colors duration-200">
+                        <p className=" leading-5 relative shrink-0 text-muted-foreground text-base text-nowrap tracking-[0.16px] hover:text-foreground hover:underline underline-offset-2 transition-colors duration-200">
                         {item.label}
                       </p>
                     </button>
@@ -88,14 +88,14 @@ export function Footer({
 
               {/* Contact */}
               <div className="[grid-area:1_/_4] content-stretch flex flex-col gap-4 items-start relative shrink-0">
-                <div className="content-stretch flex flex-col  font-normal items-start relative shrink-0 text-gray-400 w-full">
+                <div className="content-stretch flex flex-col  font-normal items-start relative shrink-0 text-muted-foreground w-full">
                   <p className="leading-6 min-w-full relative shrink-0 text-base w-[min-content]">
                     Let&apos;s work together!
                   </p>
                   <p className="leading-6 relative shrink-0 text-base break-all">
                     <a
                       href={`mailto:${email}`}
-                      className="hover:text-blue-500 text-gray-500 transition-colors duration-200"
+                      className="hover:text-foreground hover:underline underline-offset-2 text-muted-foreground transition-colors duration-200"
                     >
                       <span>{email} </span>
                       <span className=" font-bold">
@@ -132,7 +132,7 @@ export function Footer({
                         className="social-link hover:opacity-70 transition-opacity"
                       >
                         <div className="relative shrink-0 size-6">
-                          <Icon className="size-full text-[#c4c9d0]" />
+                          <Icon className="size-full text-muted-foreground" />
                         </div>
                       </a>
                     )
@@ -149,7 +149,7 @@ export function Footer({
                   href="/"
                   className="content-stretch flex gap-2 items-center justify-center relative shrink-0 hover:opacity-80 transition-opacity"
                 >
-                  <p className=" font-medium leading-normal relative shrink-0 text-[#374151] text-[32px]">
+                  <p className=" font-medium leading-normal relative shrink-0 text-foreground text-[32px]">
                     {name}
                   </p>
                 </Link>
@@ -158,14 +158,14 @@ export function Footer({
               {/* Contact & Social */}
               <div className="content-stretch flex flex-col gap-10 items-start relative shrink-0">
                 <div className="content-stretch flex flex-col gap-4 items-start relative shrink-0">
-                  <div className="content-stretch flex flex-col  font-normal items-start relative shrink-0 text-gray-400 w-full">
+                  <div className="content-stretch flex flex-col  font-normal items-start relative shrink-0 text-muted-foreground w-full">
                     <p className="leading-6 relative shrink-0 text-base w-full">
                       Let&apos;s work together!
                     </p>
                     <p className="leading-6 relative shrink-0 text-base w-full break-all">
                       <a
                         href={`mailto:${email}`}
-                        className="hover:text-blue-500 text-gray-500 transition-colors duration-200"
+                        className="hover:text-foreground hover:underline underline-offset-2 text-muted-foreground transition-colors duration-200"
                       >
                         <span>{email} </span>
                         <span className=" font-bold">
@@ -203,7 +203,7 @@ export function Footer({
                           className="social-link hover:opacity-70 transition-opacity"
                         >
                           <div className="relative shrink-0 size-6">
-                            <Icon className="size-full text-[#c4c9d0]" />
+                            <Icon className="size-full text-muted-foreground" />
                           </div>
                         </a>
                       )
@@ -220,7 +220,7 @@ export function Footer({
                         href={item.href}
                         className="content-stretch flex items-center justify-center px-0.5 py-0 relative rounded-full shrink-0"
                       >
-                        <p className=" leading-5 relative shrink-0 text-[#9ca3af] text-base text-nowrap tracking-[0.16px] hover:text-blue-500 transition-colors duration-200 uppercase">
+                        <p className=" leading-5 relative shrink-0 text-muted-foreground text-base text-nowrap tracking-[0.16px] hover:text-foreground hover:underline underline-offset-2 transition-colors duration-200 uppercase">
                           {item.label}
                         </p>
                       </Link>
@@ -230,7 +230,7 @@ export function Footer({
                         onClick={() => onTabChange?.(item.id)}
                         className="content-stretch flex items-center justify-center px-0.5 py-0 relative rounded-full shrink-0"
                       >
-                          <p className=" leading-5 relative shrink-0 text-[#9ca3af] text-base text-nowrap tracking-[0.16px] hover:text-blue-500 transition-colors duration-200 uppercase">
+                          <p className=" leading-5 relative shrink-0 text-muted-foreground text-base text-nowrap tracking-[0.16px] hover:text-foreground hover:underline underline-offset-2 transition-colors duration-200 uppercase">
                           {item.label}
                         </p>
                       </button>
@@ -246,19 +246,19 @@ export function Footer({
             className="scroll-reveal-fade content-stretch flex flex-col gap-0.5 items-center relative shrink-0 revealed"
             style={{ transitionDelay: "200ms" }}
           >
-            <p className=" font-normal leading-7 relative shrink-0 text-gray-500 text-sm">
+            <p className=" font-normal leading-7 relative shrink-0 text-foreground text-sm">
               <span>Built with Next.js &amp; </span>
               <a
-                className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:!text-primary-foreground transition-colors"
+                className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:opacity-70 transition-opacity"
                 href="https://claude.ai/code"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Claude Code
               </a>
-              <span className="text-gray-400"> ✦</span>
+              <span className="text-foreground"> ✦</span>
             </p>
-            <p className=" font-normal leading-5 tracking-wider relative shrink-0 text-[#9ca3af] text-xs text-nowrap cursor-pointer">
+            <p className=" font-normal leading-5 tracking-wider relative shrink-0 text-foreground text-xs text-nowrap cursor-pointer">
               CHANGELOG: {lastUpdated}
             </p>
           </div>

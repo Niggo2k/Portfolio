@@ -36,12 +36,13 @@ export default function Page() {
   }
 
   return (
-    <main className="bg-white dark:bg-[#0a0a0a] content-stretch flex flex-col items-center relative size-full min-h-screen">
+    <main className="bg-background content-stretch flex flex-col items-center relative size-full min-h-screen">
 
       <Hero
         name={profile.name}
         tagline={profile.tagline}
         previousCompanies={previousCompanies}
+        showContactButton={true}
       />
 
       <TabNav

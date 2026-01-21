@@ -26,10 +26,10 @@ export function TabNav({ tabs, activeTab, onTabChange, className }: TabNavProps)
             {tabs.map((tab) => {
               const isActive = activeTab === tab.id
               const baseClasses = "content-stretch flex items-center justify-center px-3.5 pt-[5px] pb-[4px] relative rounded-full shrink-0 cursor-pointer transition-all duration-100 ease-out border border-transparent"
-              const activeClasses = "bg-gray-200/60 dark:bg-gray-700/60 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9),inset_0_-1px_1px_rgba(0,0,0,0.02)] !border-white/50 dark:!border-gray-600/50"
-              const inactiveClasses = "hover:bg-gray-200/40 dark:hover:bg-gray-700/40 hover:pt-[3px] hover:pb-[2px] hover:my-[2px]"
-              const textActiveClasses = "text-[#4b5563] dark:text-[#e5e7eb]"
-              const textInactiveClasses = "text-[#9ca3af] dark:text-[#6b7280]"
+              const activeClasses = "bg-muted/60 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9),inset_0_-1px_1px_rgba(0,0,0,0.02)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)] border-border/50"
+              const inactiveClasses = "hover:bg-muted/40 hover:pt-[3px] hover:pb-[2px] hover:my-[2px]"
+              const textActiveClasses = "text-foreground"
+              const textInactiveClasses = "text-muted-foreground"
 
               // If tab has an href, render as Link
               if (tab.href) {
@@ -75,7 +75,7 @@ export function TabNav({ tabs, activeTab, onTabChange, className }: TabNavProps)
         </div>
       </div>
       <div className="px-16 max-md:px-8 w-full pt-3">
-        <div className="bg-zinc-100 dark:bg-zinc-800 h-px shrink-0 w-full"></div>
+        <div className="bg-border h-px shrink-0 w-full"></div>
       </div>
     </div>
   )

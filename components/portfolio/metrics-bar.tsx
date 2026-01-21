@@ -26,12 +26,12 @@ export function MetricsBar({ metrics, className }: MetricsBarProps) {
           {metrics.map((metric, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-[#1f2937]/50 border border-gray-100 dark:border-gray-800 rounded-xl p-5 md:p-6 transition-all hover:shadow-md hover:border-gray-200 dark:hover:border-gray-700"
+              className="bg-card border border-border rounded-xl p-5 md:p-6 transition-all hover:shadow-md hover:border-muted-foreground/30"
             >
-              <div className=" font-bold text-3xl md:text-4xl text-[#1f2937] dark:text-[#f3f4f6] mb-1">
+              <div className=" font-bold text-3xl md:text-4xl text-foreground mb-1">
                 {metric.value}
               </div>
-              <div className=" text-sm text-[#9ca3af] dark:text-[#6b7280]">
+              <div className=" text-sm text-muted-foreground">
                 {metric.label}
               </div>
             </div>
