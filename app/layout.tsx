@@ -72,6 +72,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Nico's Portfolio" />
+      </head>
       <body
         className={`${notoSans.variable} ${dmMono.variable} font-sans antialiased`}
       >
