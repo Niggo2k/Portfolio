@@ -24,7 +24,7 @@ export function InterestsSection({ className }: InterestsSectionProps) {
   return (
     <section
       className={cn(
-        "scroll-reveal w-full px-16 max-md:px-8 py-8",
+        "scroll-reveal w-full px-16 max-md:px-8 py-16",
         className
       )}
     >

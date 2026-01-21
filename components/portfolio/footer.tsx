@@ -40,10 +40,10 @@ export function Footer({
     <footer className={cn("relative shrink-0 w-full overflow-hidden bg-[linear-gradient(360deg,#a8c0ff_0%_8%,#b8caff_15%,#e8d4ff_22%,#f8e0f8_28%,#fff0fa,#fffeff_42%,#fff_55%_100%)] dark:bg-[linear-gradient(360deg,#1a1033_0%_8%,#1c1535_15%,#1f1238_22%,#1e1030_28%,#1a0f28,#0f0a14_42%,#0a0a0a_55%_100%)] bg-size-[120%_120%] bg-bottom-left", className)}>
       <div className="absolute inset-0 pointer-events-none bg-repeat bg-top-right bg-size-auto opacity-80 dark:invert" style={{ background: 'url(/images/grain-texture.png)' }} />
       <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col gap-16 items-center px-16 max-md:px-8 pt-8 pb-8 max-md:pb-16 max-md:pt-4 relative w-full">
+        <div className="content-stretch flex flex-col gap-16 items-center px-16 max-md:px-8 pt-8 pb-8 max-md:pb-16 max-md:pt-16 relative w-full">
           {/* Divider */}
-          <div className="scroll-reveal content-stretch flex flex-col gap-5 items-start relative shrink-0 w-full revealed">
-            <div className="bg-border h-px shrink-0 w-full" />
+          <div className="scroll-reveal content-stretch flex flex-col gap-14 items-start relative shrink-0 w-full revealed">
+            <div className="bg-border h-px shrink-0 w-full" style={{ maskImage: "linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%)" }} />
 
             {/* Desktop Footer */}
             <div className="hidden md:grid gap-5 grid-cols-[repeat(4,_minmax(0px,_1fr))] grid-rows-[repeat(1,_fit-content(100%))] relative shrink-0 w-full">

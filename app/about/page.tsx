@@ -171,7 +171,7 @@ export default function AboutPage() {
       />
 
       {/* Experience Section */}
-      <section className="scroll-reveal w-full px-16 max-md:px-8 py-8">
+      <section className="scroll-reveal w-full px-16 max-md:px-8 py-16">
         <div className="max-w-4xl mx-auto">
           <h2 className=" font-medium text-foreground text-2xl mb-6">
             Experience
@@ -215,7 +215,7 @@ export default function AboutPage() {
       </section>
 
       {/* Technologies Section */}
-      <section className="scroll-reveal w-full px-16 max-md:px-8 py-8">
+      <section className="scroll-reveal w-full px-16 max-md:px-8 py-16">
         <div className="max-w-4xl mx-auto">
           <h2 className=" font-medium text-foreground text-2xl mb-4">
             Technologies
