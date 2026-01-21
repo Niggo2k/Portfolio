@@ -242,11 +242,44 @@
   mix-blend-mode: normal;
 }
 
+/* Lanyard badge sway animation */
+@keyframes gentle-sway {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+.lanyard-container {
+  animation: gentle-sway 4s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* Holo overlay smooth transitions */
+.badge-card .holo-overlay {
+  transition: opacity 0.3s ease-out;
+}
+
 /* Accessibility - respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*),
   ::view-transition-old(*),
   ::view-transition-new(*) {
     animation: none !important;
+  }
+
+  .lanyard-container {
+    animation: none;
+  }
+
+  .badge-card .holo-overlay {
+    transition: none;
+  }
+
+  .green-pulse-ring {
+    animation: none;
+    opacity: 0;
   }
 }

@@ -1,32 +1,28 @@
 "use client"
 
-import * as React from "react"
 import { cn } from "@/lib/utils"
-import {
-  Rocket,
-  GameController,
-  Airplane,
-  MusicNotes,
-} from "@phosphor-icons/react"
+import { IconPush, IconGamepad, IconSuitcaseSticker, IconAudio, IconSoccer, IconDumbell } from "@central-icons-react/round-filled-radius-3-stroke-2"
 
 export interface Interest {
-  icon: "rocket" | "gamepad" | "travel" | "music"
+  icon: typeof IconPush | typeof IconGamepad | typeof IconSuitcaseSticker | typeof IconAudio
   label: string
 }
 
-const iconMap = {
-  rocket: Rocket,
-  gamepad: GameController,
-  travel: Airplane,
-  music: MusicNotes,
-}
-
 interface InterestsSectionProps {
-  interests: Interest[]
   className?: string
 }
 
-export function InterestsSection({ interests, className }: InterestsSectionProps) {
+export function InterestsSection({ className }: InterestsSectionProps) {
+  // Interests data
+  const interestsData: Interest[] = [
+    { icon: IconPush, label: "Building side projects" },
+    { icon: IconGamepad, label: "Gaming" },
+    { icon: IconSuitcaseSticker, label: "Travel" },
+    { icon: IconAudio, label: "Music" },
+    { icon: IconDumbell, label: "Fitness" },
+    { icon: IconSoccer, label: "Soccer" },
+  ]
+
   return (
     <section
       className={cn(
@@ -36,11 +32,11 @@ export function InterestsSection({ interests, className }: InterestsSectionProps
     >
       <div className="max-w-4xl mx-auto">
         <h2 className=" font-medium text-[#374151] dark:text-[#e5e7eb] text-2xl mb-6">
-          When I'm not coding
+          When I&apos;m not coding
         </h2>
         <div className="flex flex-wrap gap-3">
-          {interests.map((interest, index) => {
-            const Icon = iconMap[interest.icon]
+          {interestsData.map((interest, index) => {
+            const Icon = interest.icon
             return (
               <div
                 key={index}
@@ -48,8 +44,8 @@ export function InterestsSection({ interests, className }: InterestsSectionProps
               >
                 {Icon && (
                   <Icon
-                    className="size-5 text-[#6b7280] dark:text-[#9ca3af]"
-                    weight="duotone"
+                    size={20}
+                    className="text-[#6b7280] dark:text-[#9ca3af] fill-current"
                   />
                 )}
                 <span className=" text-sm text-[#6b7280] dark:text-[#9ca3af]">

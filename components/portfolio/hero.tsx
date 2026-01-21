@@ -57,7 +57,7 @@ export function Hero({
           WebkitMaskComposite: 'source-in',
         }}
       >
-        <span className="font-mono text-[120px] md:text-[180px] no-wrap font-bold tracking-tight leading-none block px-4 pt-2 border-border border-b-input from-card/100 to-card/20 dark:border-border/10 dark:border-t-border/30 dark:from-primary/15 dark:to-primary/5 border bg-linear-to-b dark:border-b-0 text-foreground/[0.035] dark:text-foreground/[0.06] backdrop-blur-[1px]"
+        <span className="font-mono text-[120px] md:text-[160px] no-wrap font-bold tracking-tight leading-none block px-4 pt-2 border-border border-b-input from-card/100 to-card/20 dark:border-border/10 dark:border-t-border/30 dark:from-primary/15 dark:to-primary/5 border bg-linear-to-b dark:border-b-0 text-foreground/[0.035] dark:text-foreground/[0.06] backdrop-blur-[1px]"
           style={{ textWrapMode: "nowrap" }}>
           NICO EPP NICO EPP<br />
           EPP NICO EPP NICO
@@ -69,7 +69,7 @@ export function Hero({
           <div className="content-stretch flex flex-row items-start px-16 pt-8 pb-8 max-md:px-8 max-md:pt-8 max-md:pb-4 relative w-full">
             <div className="content-stretch flex items-start justify-between relative shrink-0 w-full">
               <div className="relative shrink-0 size-11">
-                <Image width={44} height={44} quality={100} alt="Nico Epp Logo" className="object-contain pointer-events-none size-full" src="/logo-ne.svg" />
+                <Image width={44} height={44} quality={100} alt="Nico Epp Logo" className="object-contain pointer-events-none size-full dark:invert" src="/logo-ne.svg" />
               </div>
             </div>
             <ThemeToggle />

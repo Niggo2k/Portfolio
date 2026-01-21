@@ -118,8 +118,6 @@ export function MagneticLogo({
             src={image}
             alt=""
             quality={100}
-            placeholder="blur"
-            blurDataURL={image}
             width={size}
             height={size}
             className="object-cover w-full h-full"

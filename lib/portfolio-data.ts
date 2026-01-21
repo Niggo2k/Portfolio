@@ -36,20 +36,22 @@ export interface ProfileData {
 		location: string;
 		bio: string;
 		extendedBio: string;
+		avatar?: string;
 	}
 
 export interface Education {
 		institution: string;
 		degree: string;
+		field?: string;
 		period: string;
 		location?: string;
 	}
 
 export const profile: ProfileData = {
 	name: "Nico Epp",
-	title: "Full-Stack Developer & Co-Founder",
+	title: "Full-Stack Developer",
 	tagline: "Crafting digital experiences from idea to scale.",
-	subtitle: "Full-Stack Developer & Co-Founder",
+	subtitle: "Full-Stack Developer",
 	location: "Göppingen, Germany",
 	bio: "I'm a full-stack developer passionate about building products that solve real problems. With experience across e-commerce platforms, data visualization tools, and IoT solutions, I focus on creating intuitive user experiences backed by solid engineering.",
 	extendedBio: `I'm a full-stack developer based in Germany with a passion for building products that matter. I love taking ideas from concept to production—whether that's a cashback platform serving hundreds of users or a side project that scratches my own itch.
@@ -57,12 +59,14 @@ export const profile: ProfileData = {
 My journey started with curiosity about how things work, which led me to study computer science and eventually co-found Paroot Cashback. Building a startup taught me more than any course ever could: from handling payment integrations to designing systems that scale.
 
 I'm particularly interested in developer tools, e-commerce, and anything that makes people's lives a bit easier. When I'm not shipping features, you'll find me exploring new technologies, contributing to open source, or dreaming up the next side project.`,
+	avatar: "/images/nico.png",
 };
 
 export const education: Education[] = [
 	{
 		institution: "Esslingen University of Applied Sciences",
 		degree: "Bachelor of Engineering",
+		field: "Computer Science",
 		period: "Oct. 2021 - Aug. 2025",
 		location: "Esslingen, Germany",
 	},
@@ -237,7 +241,7 @@ export const socialLinks: SocialLink[] = [
 	},
 	{
 		platform: "email",
-		url: "mailto:hello@nico.dev",
+		url: "mailto:hello@bynico.dev",
 		label: "Email",
 	},
 ];
