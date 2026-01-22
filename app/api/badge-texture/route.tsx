@@ -6,6 +6,7 @@ import { join } from 'path'
 import { tmpdir } from 'os'
 
 export const revalidate = 3600 // 1 hour
+export const dynamic = 'force-dynamic'
 
 // Types for GitHub contribution data
 interface ContributionDay {
