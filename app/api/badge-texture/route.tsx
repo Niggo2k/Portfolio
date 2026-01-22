@@ -87,10 +87,10 @@ async function writeCache(username: string, data: ContributionData): Promise<voi
 async function fetchContributions(username: string): Promise<ContributionData> {
   const token = process.env.GITHUB_TOKEN
 
-  // Calculate date range (last 3 months)
+  // Calculate date range (last 12 months)
   const to = new Date()
   const from = new Date()
-  from.setMonth(from.getMonth() - 3)
+  from.setMonth(from.getMonth() - 12)
 
   // Try to get cached data first
   const cached = await readCache(username)

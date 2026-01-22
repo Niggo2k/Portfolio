@@ -40,7 +40,7 @@ export async function GET(request: Request) {
 
   const to = new Date()
   const from = new Date()
-  from.setMonth(from.getMonth() - 3)
+  from.setMonth(from.getMonth() - 12);
 
   const query = `
     query($username: String!, $from: DateTime!, $to: DateTime!) {
