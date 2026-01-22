@@ -3,6 +3,7 @@ import { ViewTransition } from "react";
 import { Noto_Sans, DM_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
 const dmMono = DM_Mono({
   subsets: ["latin"],
@@ -83,6 +84,7 @@ export default function RootLayout({
             {children}
           </ViewTransition>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
