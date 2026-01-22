@@ -268,7 +268,7 @@ export async function GET() {
           >
             <img
               src={backgroundImageUrl}
-              alt="Background Image"
+              alt=""
               style={{
                 width: '100%',
                 height: '100%',
@@ -389,9 +389,9 @@ export async function GET() {
                     gap: 10,
                   }}
                 >
-                  {dots.map((dot, i) => (
+                    {dots.map((dot) => (
                     <div
-                      key={i}
+                        key={dot.color}
                       style={{
                         display: 'flex',
                         width: 14,
@@ -474,7 +474,7 @@ export async function GET() {
                           : 0.1
                         return (
                           <div
-                            key={weekIndex}
+                            key={weekIndex + dayIndex}
                             style={{
                               display: 'flex',
                               width: cellSize,
@@ -504,7 +504,7 @@ export async function GET() {
             }}>
             <img
               src={backgroundImageUrl}
-              alt="Background Image"
+              alt=""
               style={{
                 width: '100%',
                 height: '100%',
